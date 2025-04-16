@@ -1,9 +1,9 @@
-package com.pluralsight;
 
-public class PayrollCalculator {
+import java.sql.SQLOutput;
+
+public class PayrollCalculator{
 
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
 
        //Get the known values.
         System.out.println("Please enter the employee name");
@@ -18,15 +18,26 @@ public class PayrollCalculator {
 
 
        //Calculate the uknown
-        double grossPay = hoursWorked * payRate;
+        double grossPay = calcGrossPay(hoursWorked, payRate);
 
 
         //Display the results
-        System.out.println("%s worked %f hours at a rate of %f and made %f, name , hoursWorked, pay");
-
-
-
+        System.out.println("%s worked %f hours at a rate of %f and made %f, name , hoursWorked, payRate. grossPay");
 
     }
+
+    public static double calcGrossPay(float hoursWorked, double parRate){
+        if (hoursWorked <= 40){
+            return hoursWorked * payRate;
+        }
+    }
+
 }
 
+public static double calcGrossPay(float hoursWorked, double payRate)
+
+public static String promptForName(){
+    System.out.println("Please enter the employee name: ");
+    String result = scanner.nextLine();
+    return result
+}
